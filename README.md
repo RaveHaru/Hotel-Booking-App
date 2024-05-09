@@ -4,7 +4,7 @@
 | Name              | ID       |
 |-------------------|----------|
 | Vo Nguyen Gia Bao  | 21127016 |
-| Le Phuong Chi  |  |
+| Le Phuong Chi  | 21127019 |
 | Phan Ly Bao Hanh  | 21127039 |
 | Nguyen Le Tan    | 21127741 |
 
@@ -31,4 +31,13 @@
 13. Loyalty Program Participation: Participation in loyalty programs for special offers.
 14. Customer Support: Access to customer support for assistance.
 15. Room Rental Posting and Management: Posting and managing room rental information.
+
+## Demo Account
+  Username: phuongchile@gmail.com
+  Password: 12345678
+
+- The program is executed on Android Studio
+- No additional environment setup is required.
+-  Database: Firebase
+- The program integrates payment via Momo. If the application does not have the Momo app, please install it at: https://developers.momo.vn/v3/download/ (Test app)
 
