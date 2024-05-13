@@ -349,6 +349,7 @@
     <color name="red">#AF0C0C</color>
     <color name="white">#FFFFFFFF</color>
     <string name="Filter">Chọn lọc</string>
+    <string name="addBill_title">Thêm Hóa đơn mới</string>
     <string name="addHotel_title">Thêm khách sạn mới</string>
     <string name="addRoom_title">Thêm phòng khách sạn</string>
     <string name="app_name">AngodaFake</string>

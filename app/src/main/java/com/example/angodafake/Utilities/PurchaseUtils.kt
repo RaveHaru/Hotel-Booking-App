@@ -216,6 +216,33 @@ object PurchaseUtils {
         })
     }
 
+    fun getBookedRoomBillsByRoomIDAndDate(ID_Hotel: String, ID_Room: String, dateCome: String, dateGo: String, listener: (Int) -> Unit){
+        val billQuery = database.child("purchases")
+        billQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var count = 0
+                for (purchaseSnapshort in dataSnapshot.children){
+                    val purchase = purchaseSnapshort.getValue(Purchase::class.java)
+                    if (purchase?.ID_Hotel == ID_Hotel
+                        && (purchase.time_cancel == "" || purchase.time_cancel == null)
+                        && purchase.ID_Room == ID_Room
+                        && (isDateInRange(purchase.date_come!!, dateCome, dateGo)
+                                || isDateInRange(purchase.date_go!!, dateCome, dateGo))
+                    ) {
+                        purchase.ID = purchaseSnapshort.key
+                        count += purchase.quantity ?: 0
+                    }
+                }
+                listener(count)
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Xử lý khi có lỗi xảy ra
+                Log.e("firebase", "Error getting room count: ${databaseError.message}")
+                listener(0)
+            }
+        })
+    }
+
     fun getBookedRoomBillsByRoomID(ID_Hotel: String, ID_Room: String, date: String, listener: (List<Purchase>?, Int) -> Unit){
         val billQuery = database.child("purchases")
         billQuery.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -352,6 +379,16 @@ object PurchaseUtils {
                 Log.e("firebase", "Error delete purchase: ${databaseError.message}")
             }
         })
+    }
+
+    fun addPurchase(bill: Purchase, listener: (String) -> Unit){
+        val key = database.child("purchases").push().key
+        if (key != null){
+            database.child("purchases").child(key).setValue(bill)
+            listener(key)
+        } else{
+            Log.e("firebase","Counldn't get push key for user")
+        }
     }
 
 }

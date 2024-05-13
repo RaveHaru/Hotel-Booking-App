@@ -3397,6 +3397,7 @@ drawable rounded_button_edit
 drawable rounded_button_price
 drawable rounded_corner
 drawable rounded_layout
+drawable spinner_border
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3577,6 +3578,7 @@ id btn_accept
 id btn_add
 id btn_add1
 id btn_add2
+id btn_addBill
 id btn_add_hotel
 id btn_back
 id btn_bookmark
@@ -3928,6 +3930,8 @@ id lConfirmedNewPw
 id lConveniences
 id lCountry
 id lDate
+id lDateCome
+id lDateGo
 id lDescription
 id lDirection
 id lDob
@@ -3940,6 +3944,7 @@ id lLatitude
 id lLocationDetail
 id lLongitude
 id lMerchantCode
+id lMethod
 id lName
 id lNewPw
 id lOldPw
@@ -3950,6 +3955,8 @@ id lPrice
 id lQuantity
 id lRoomType
 id lSingleBed
+id lTotal
+id lTypeRoom
 id labeled
 id lay1
 id lay2
@@ -4289,6 +4296,9 @@ id snapMargins
 id software
 id sort
 id south
+id sp_hotelName
+id sp_method
+id sp_typeRoom
 id spacer
 id specialDemand
 id special_effects_controller_view_tag
@@ -4483,6 +4493,8 @@ id tv_contactInf
 id tv_conveniences
 id tv_customerName
 id tv_date
+id tv_dateCome
+id tv_dateGo
 id tv_description
 id tv_direction
 id tv_double_bed
@@ -4510,6 +4522,7 @@ id tv_threeStar
 id tv_total
 id tv_totalPrice
 id tv_twoStar
+id tv_typeRoom
 id typeCustomer
 id type_room
 id unchecked
@@ -4752,6 +4765,7 @@ layout design_text_input_start_icon
 layout empty_active_room
 layout empty_canceled_room
 layout empty_past_room
+layout fragment_add_bill
 layout fragment_add_first_room
 layout fragment_add_hotel
 layout fragment_add_hotel_image
@@ -4903,6 +4917,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string addBill_title
 string addHotel_title
 string addRoom_title
 string androidx_startup

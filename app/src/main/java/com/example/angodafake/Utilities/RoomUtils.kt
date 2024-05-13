@@ -162,4 +162,39 @@ object RoomUtils {
         }
     }
 
+    fun getTypeByHotelID(ID_Hotel: String, listener: (List<String>) -> Unit){
+        val typeList = mutableListOf<String>()
+        database.child("rooms").child(ID_Hotel).get().addOnSuccessListener { dataSnapshot ->
+            for (roomSnapshot in dataSnapshot.children) {
+                val room = roomSnapshot.getValue(Rooms::class.java)
+                typeList.add(room?.type!!)
+            }
+            listener(typeList)
+        }.addOnFailureListener { exception ->
+            Log.e("firebase", "Error getting room list", exception)
+            listener(emptyList()) // Trả về danh sách rỗng nếu có lỗi xảy ra
+        }
+    }
+
+    fun getQuantityAndPriceByType(ID_Hotel: String, type: String, listener: (String, Int, Int) -> Unit){
+        database.child("rooms").child(ID_Hotel).get().addOnSuccessListener { dataSnapshot ->
+            var id = ""
+            var quantity = 0
+            var price = 0
+            for (roomSnapshot in dataSnapshot.children) {
+                val room = roomSnapshot.getValue(Rooms::class.java)
+                if (room?.type == type){
+                    id = roomSnapshot.key!!
+                    quantity = room.quantity!!
+                    price = room.price!!
+                    break
+                }
+            }
+            listener(id, quantity, price)
+        }.addOnFailureListener { exception ->
+            Log.e("firebase", "Error getting room list", exception)
+            listener("", 0, 0) // Trả về danh sách rỗng nếu có lỗi xảy ra
+        }
+    }
+
 }

@@ -70,6 +70,26 @@ object HotelUtils {
         })
     }
 
+    fun getHotelNamesByOwnerID(ownerID: String, listener: (MutableList<String>) -> Unit) {
+        val hotelsQuery = database.child("hotels")
+        hotelsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val hotelNameList = mutableListOf<String>()
+                for (hotelSnapshot in dataSnapshot.children) {
+                    val hotel = hotelSnapshot.getValue(Hotel::class.java)
+                    if (hotel?.ID_Owner == ownerID) {
+                        hotelNameList.add(hotel.name!!)
+                    }
+                }
+                listener(hotelNameList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
     fun addHotel(hotel: Hotel, listener: (String) -> Unit){
         val key = database.child("hotels").push().key
         if (key != null){
@@ -173,6 +193,29 @@ object HotelUtils {
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
+            }
+        })
+    }
+
+    fun getIDHotelByNameAndIdOwner(hotelName: String, ID_owner: String, listener: (String?) -> Unit){
+        val hotelsQuery = database.child("hotels")
+        hotelsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var firstHotel: String? = null
+                for (hotelSnapshot in dataSnapshot.children) {
+                    val hotel = hotelSnapshot.getValue(Hotel::class.java)
+                    if (hotel?.name!!.equals(hotelName, ignoreCase = true)
+                        && hotel.ID_Owner == ID_owner) {
+                        firstHotel = hotelSnapshot.key
+                        break
+                    }
+                }
+                listener(firstHotel)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Xử lý khi có lỗi xảy ra
+                listener(null) // Truyền giá trị null nếu có lỗi
             }
         })
     }

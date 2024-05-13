@@ -19,6 +19,7 @@ import com.example.angodafake.Adapter.BillAdapter
 import com.example.angodafake.Utilities.HotelUtils
 import com.example.angodafake.Utilities.PurchaseUtils
 import com.example.angodafake.db.Purchase
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.text.DecimalFormat
@@ -46,6 +47,7 @@ class BillFragment(private var idUser: String) : Fragment() {
     private lateinit var lBillFilter: TextInputLayout
     private lateinit var et_billFilter: TextInputEditText
     private lateinit var radioGroup: RadioGroup
+    private lateinit var addFab: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +70,7 @@ class BillFragment(private var idUser: String) : Fragment() {
         val layoutManager = LinearLayoutManager(requireContext())
         recyclerView.layoutManager = layoutManager
 
-        if (fromFrag == "edit" || fromFrag == "edit_room"){
+        if (fromFrag == "edit" || fromFrag == "edit_room" || fromFrag == "myHotel"){
             val list = arguments?.getStringArrayList("bills")
             var total = 0.0
             for (bill in list!!){
@@ -82,6 +84,20 @@ class BillFragment(private var idUser: String) : Fragment() {
                     }
                 }
             }
+        }
+
+        addFab.setOnClickListener {
+            val arg = Bundle()
+            arg.putString("date", arguments?.getString("date"))
+            arg.putString("dateType", arguments?.getString("dateType"))
+            arg.putString("searchStr", arguments?.getString("searchStr"))
+            arg.putStringArrayList("bills", arguments?.getStringArrayList("bills"))
+
+            val addBillFrag = AddBillFragment(idUser)
+            addBillFrag.arguments = arg
+
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.replaceFragment(addBillFrag)
         }
 
         et_billFilter.addTextChangedListener(object : TextWatcher {
@@ -159,7 +175,7 @@ class BillFragment(private var idUser: String) : Fragment() {
         }
 
         btn_back.setOnClickListener {
-            if (fromFrag == "edit"){
+            if (fromFrag == "edit" || fromFrag == "myHotel"){
                 val arg = Bundle()
                 arg.putString("date", arguments?.getString("date"))
                 arg.putString("dateType", arguments?.getString("dateType"))
@@ -204,6 +220,12 @@ class BillFragment(private var idUser: String) : Fragment() {
         et_billFilter = lBillFilter.editText as TextInputEditText
         radioGroup = view.findViewById(R.id.radioGroup)
         bill_list = ArrayList()
+        addFab = view.findViewById(R.id.addFab)
+        if (fromFrag == "myHotel"){
+            addFab.visibility = View.VISIBLE
+        } else{
+            addFab.visibility = View.GONE
+        }
     }
     companion object {
         /**

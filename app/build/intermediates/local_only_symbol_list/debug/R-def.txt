@@ -168,6 +168,7 @@ drawable rounded_button_delete
 drawable rounded_button_edit
 drawable rounded_button_price
 drawable rounded_layout
+drawable spinner_border
 drawable upload_image
 drawable upload_img_layout
 drawable visa_logo
@@ -236,6 +237,7 @@ id btn_accept
 id btn_add
 id btn_add1
 id btn_add2
+id btn_addBill
 id btn_add_hotel
 id btn_back
 id btn_bookmark
@@ -446,6 +448,8 @@ id lConfirmedNewPw
 id lConveniences
 id lCountry
 id lDate
+id lDateCome
+id lDateGo
 id lDescription
 id lDirection
 id lDob
@@ -458,6 +462,7 @@ id lLatitude
 id lLocationDetail
 id lLongitude
 id lMerchantCode
+id lMethod
 id lName
 id lNewPw
 id lOldPw
@@ -468,6 +473,8 @@ id lPrice
 id lQuantity
 id lRoomType
 id lSingleBed
+id lTotal
+id lTypeRoom
 id lay1
 id lay2
 id lay3
@@ -626,6 +633,9 @@ id shareBtn
 id showDetail
 id sign_up_title
 id sort
+id sp_hotelName
+id sp_method
+id sp_typeRoom
 id specialDemand
 id spinner
 id status1
@@ -748,6 +758,8 @@ id tv_contactInf
 id tv_conveniences
 id tv_customerName
 id tv_date
+id tv_dateCome
+id tv_dateGo
 id tv_description
 id tv_direction
 id tv_double_bed
@@ -775,6 +787,7 @@ id tv_threeStar
 id tv_total
 id tv_totalPrice
 id tv_twoStar
+id tv_typeRoom
 id typeCustomer
 id type_room
 id uploadImage
@@ -845,6 +858,7 @@ layout custom_voucher_of_hotel_adapter
 layout empty_active_room
 layout empty_canceled_room
 layout empty_past_room
+layout fragment_add_bill
 layout fragment_add_first_room
 layout fragment_add_hotel
 layout fragment_add_hotel_image
@@ -890,6 +904,7 @@ menu nav_bar
 mipmap ic_launcher
 mipmap ic_launcher_round
 string Filter
+string addBill_title
 string addHotel_title
 string addRoom_title
 string app_name

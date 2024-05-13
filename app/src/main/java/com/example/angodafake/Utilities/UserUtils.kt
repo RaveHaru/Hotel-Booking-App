@@ -146,4 +146,14 @@ object UserUtils {
             }
         })
     }
+
+    fun addUser(user: User, listener: (String) -> Unit){
+        val key = database.child("users").push().key
+        if (key != null){
+            database.child("users").child(key).setValue(user)
+            listener(key)
+        } else{
+            Log.e("firebase","Counldn't get push key for user")
+        }
+    }
 }

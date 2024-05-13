@@ -252,7 +252,7 @@ class MyHotel(private var idUser: String) : Fragment(), OnHotelDeleteListener {
                 }
 
                 val arg = Bundle()
-                arg.putString("from", "edit")
+                arg.putString("from", "myHotel")
                 arg.putString("date", et_date.text.toString())
                 arg.putString("dateType", dateType.toString())
                 arg.putString("searchStr", searchStr)

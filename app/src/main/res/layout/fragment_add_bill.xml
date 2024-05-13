@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBillFragment"
+    android:id="@+id/rootView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:id="@+id/layout_editInfo_title"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="70dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="back"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/profileTittle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginEnd="60dp"
+            android:gravity="center"
+            android:text="@string/addBill_title"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_editInfo_title"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="Họ và tên khách hàng (*)"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                app:boxStrokeColor="@color/blue"
+                app:cursorColor="@color/black"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Họ và tên"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_PhoneN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Số di động"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/lName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lPhoneN"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:boxStrokeColor="@color/blue"
+                app:cursorColor="@color/black"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/lName"
+                app:layout_constraintStart_toStartOf="@+id/lName"
+                app:layout_constraintTop_toBottomOf="@+id/tv_PhoneN">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Số di động"
+                    android:inputType="phone"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_hotelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Khách sạn"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/lPhoneN" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lHotelName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:boxStrokeColor="@color/blue"
+                android:background="@drawable/spinner_border"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/lName"
+                app:layout_constraintStart_toStartOf="@+id/lName"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hotelName">
+
+                <Spinner
+                    android:id="@+id/sp_hotelName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="14sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_typeRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Loại phòng"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/lHotelName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lTypeRoom"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:boxStrokeColor="@color/blue"
+                android:background="@drawable/spinner_border"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/lName"
+                app:layout_constraintStart_toStartOf="@+id/lName"
+                app:layout_constraintTop_toBottomOf="@+id/tv_typeRoom">
+
+                <Spinner
+                    android:id="@+id/sp_typeRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="14sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_map"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/lTypeRoom"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/lTypeRoom"
+                app:layout_constraintStart_toStartOf="@+id/lTypeRoom"
+                app:layout_constraintTop_toBottomOf="@+id/lTypeRoom">
+
+                <ImageView
+                    android:id="@+id/minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/baseline_minus" />
+
+                <TextView
+                    android:id="@+id/countRoom"
+                    android:layout_width="106dp"
+                    android:layout_height="33dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Số phòng: 1"
+                    android:textColor="#071115"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/plus"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/baseline_plus" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dateCome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Ngày đến"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/lHotelName"
+                app:layout_constraintTop_toBottomOf="@+id/linear_map" />
+
+            <RelativeLayout
+                android:id="@+id/lay1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/border_color"
+                app:layout_constraintEnd_toStartOf="@+id/lay2"
+                app:layout_constraintStart_toStartOf="@+id/lTypeRoom"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dateCome">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="7dp"
+                    app:srcCompat="?android:attr/actionModeFindDrawable" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lDateCome"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toEndOf="@+id/imageView6"
+                    app:boxStrokeColor="@color/blue"
+                    app:cursorColor="@color/black"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="00:00"
+                        android:background="@drawable/border_color2"
+                        android:cursorVisible="false"
+                        android:editable="false"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="dd/mm/yyyy"
+                        android:inputType="date"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_dateGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Ngày đi"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/lay2"
+                app:layout_constraintTop_toTopOf="@+id/tv_dateCome" />
+
+            <RelativeLayout
+                android:id="@+id/lay2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_color"
+                app:layout_constraintEnd_toEndOf="@+id/lTypeRoom"
+                app:layout_constraintStart_toEndOf="@+id/lay1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dateGo">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="7dp"
+                    app:srcCompat="?android:attr/actionModeFindDrawable" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lDateGo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toEndOf="@+id/imageView5"
+                    android:cursorVisible="false"
+                    app:boxStrokeColor="@color/blue"
+                    app:cursorColor="@color/black"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="23:59"
+                        android:background="@drawable/border_color2"
+                        android:editable="false"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="dd/mm/yyyy"
+                        android:inputType="date"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày đến phải sớm hơn ngày đi."
+                android:visibility="gone"
+                android:textColor="#FF0000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_dateCome"
+                app:layout_constraintTop_toBottomOf="@+id/lay1" />
+
+            <TextView
+                android:id="@+id/tv_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Phương thức thanh toán"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/errorText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lMethod"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:boxStrokeColor="@color/blue"
+                android:background="@drawable/spinner_border"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/lName"
+                app:layout_constraintStart_toStartOf="@+id/lName"
+                app:layout_constraintTop_toBottomOf="@+id/tv_method">
+
+            <Spinner
+                android:id="@+id/sp_method"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="14sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tổng tiền"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/lMethod" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lTotal"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:boxStrokeColor="@color/blue"
+                android:enabled="false"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/lName"
+                app:layout_constraintStart_toStartOf="@+id/lName"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="0 VND"
+                    android:inputType="phone"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_addBill"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_selector"
+                android:text="Thêm hóa đơn"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/lPhoneN"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/lPhoneN"
+                app:layout_constraintTop_toBottomOf="@+id/lTotal" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -164,10 +164,6 @@
         "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\fragment_home_filter.xml"
     },
     {
-        "merged": "com.example.angodafake.app-mergeDebugResources-45:/layout/fragment_bill.xml",
-        "source": "com.example.angodafake.app-main-48:/layout/fragment_bill.xml"
-    },
-    {
         "merged": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-mergeDebugResources-45:\\layout\\empty_active_room.xml",
         "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\empty_active_room.xml"
     },
@@ -256,6 +252,10 @@
         "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\fragment_home.xml"
     },
     {
+        "merged": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-mergeDebugResources-45:\\layout\\fragment_add_bill.xml",
+        "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\fragment_add_bill.xml"
+    },
+    {
         "merged": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-mergeDebugResources-45:\\layout\\activity_sign_up.xml",
         "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\activity_sign_up.xml"
     },
@@ -274,6 +274,10 @@
     {
         "merged": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-mergeDebugResources-45:\\layout\\tab_login_email.xml",
         "source": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-main-48:\\layout\\tab_login_email.xml"
+    },
+    {
+        "merged": "com.example.angodafake.app-mergeDebugResources-45:/layout/fragment_add_bill.xml",
+        "source": "com.example.angodafake.app-main-48:/layout/fragment_add_bill.xml"
     },
     {
         "merged": "C:\\Users\\lephu\\.gradle\\daemon\\8.2\\com.example.angodafake.app-mergeDebugResources-45:\\layout\\activity_book_room.xml",

@@ -3396,6 +3396,7 @@ int drawable rounded_button_edit 0x7f080194
 int drawable rounded_button_price 0x7f080195
 int drawable rounded_corner 0x7f080196
 int drawable rounded_layout 0x7f080197
+int drawable spinner_border 0x7f0801a3
 int drawable test_level_drawable 0x7f080198
 int drawable tooltip_frame_dark 0x7f080199
 int drawable tooltip_frame_light 0x7f08019a
@@ -3576,6 +3577,7 @@ int id btn_accept 0x7f0900a5
 int id btn_add 0x7f0900a6
 int id btn_add1 0x7f0900a7
 int id btn_add2 0x7f0900a8
+int id btn_addBill 0x7f09048c
 int id btn_add_hotel 0x7f0900a9
 int id btn_back 0x7f0900aa
 int id btn_bookmark 0x7f0900ab
@@ -3927,6 +3929,8 @@ int id lConfirmedNewPw 0x7f090203
 int id lConveniences 0x7f090204
 int id lCountry 0x7f090205
 int id lDate 0x7f090206
+int id lDateCome 0x7f09048d
+int id lDateGo 0x7f09048e
 int id lDescription 0x7f090207
 int id lDirection 0x7f090208
 int id lDob 0x7f090209
@@ -3939,6 +3943,7 @@ int id lLatitude 0x7f09020f
 int id lLocationDetail 0x7f090210
 int id lLongitude 0x7f090211
 int id lMerchantCode 0x7f090212
+int id lMethod 0x7f09048f
 int id lName 0x7f090213
 int id lNewPw 0x7f090214
 int id lOldPw 0x7f090215
@@ -3949,6 +3954,8 @@ int id lPrice 0x7f090219
 int id lQuantity 0x7f09021a
 int id lRoomType 0x7f09021b
 int id lSingleBed 0x7f09021c
+int id lTotal 0x7f090490
+int id lTypeRoom 0x7f090491
 int id labeled 0x7f09021d
 int id lay1 0x7f09021e
 int id lay2 0x7f09021f
@@ -4288,6 +4295,9 @@ int id snapMargins 0x7f09036a
 int id software 0x7f09036b
 int id sort 0x7f09036c
 int id south 0x7f09036d
+int id sp_hotelName 0x7f090492
+int id sp_method 0x7f090493
+int id sp_typeRoom 0x7f090494
 int id spacer 0x7f09036e
 int id specialDemand 0x7f09036f
 int id special_effects_controller_view_tag 0x7f090370
@@ -4482,6 +4492,8 @@ int id tv_contactInf 0x7f09042a
 int id tv_conveniences 0x7f09042b
 int id tv_customerName 0x7f09042c
 int id tv_date 0x7f09042d
+int id tv_dateCome 0x7f090495
+int id tv_dateGo 0x7f090496
 int id tv_description 0x7f09042e
 int id tv_direction 0x7f09042f
 int id tv_double_bed 0x7f090430
@@ -4509,6 +4521,7 @@ int id tv_threeStar 0x7f090445
 int id tv_total 0x7f090446
 int id tv_totalPrice 0x7f090447
 int id tv_twoStar 0x7f090448
+int id tv_typeRoom 0x7f090497
 int id typeCustomer 0x7f090449
 int id type_room 0x7f09044a
 int id unchecked 0x7f09044b
@@ -4751,6 +4764,7 @@ int layout design_text_input_start_icon 0x7f0c0059
 int layout empty_active_room 0x7f0c005a
 int layout empty_canceled_room 0x7f0c005b
 int layout empty_past_room 0x7f0c005c
+int layout fragment_add_bill 0x7f0c00d2
 int layout fragment_add_first_room 0x7f0c005d
 int layout fragment_add_hotel 0x7f0c005e
 int layout fragment_add_hotel_image 0x7f0c005f
@@ -4902,6 +4916,7 @@ int string abc_searchview_description_voice 0x7f120018
 int string abc_shareactionprovider_share_with 0x7f120019
 int string abc_shareactionprovider_share_with_application 0x7f12001a
 int string abc_toolbar_collapse_description 0x7f12001b
+int string addBill_title 0x7f1200fc
 int string addHotel_title 0x7f12001c
 int string addRoom_title 0x7f12001d
 int string androidx_startup 0x7f12001e
